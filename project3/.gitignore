@@ -9,10 +9,6 @@
 .history
 .svn/
 migrate_working_dir/
-/android
-/ios
-/Miscellaneous
-/web
 
 # IntelliJ related
 *.iml
@@ -35,6 +31,14 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+/android
+/ios
+/linux
+/web
+/Miscellaneous
+/test
+/windows
+
 
 # Symbolication related
 app.*.symbols
