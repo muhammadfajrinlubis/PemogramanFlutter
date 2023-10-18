@@ -20,6 +20,9 @@ class MyApp extends StatelessWidget {
             width: 350,
             height: 500,
             color: Colors.amber,
+            child: Image(
+            image: AssetImage("images/image.jpg"),
+            ),
           ),
         ),
       ),
