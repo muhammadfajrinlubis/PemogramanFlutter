@@ -95,7 +95,7 @@ class _NilaiInputState extends State<NilaiInput> {
             ),
             SizedBox(height: 10),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Menyusun tombol secara horizontal dengan jarak yang merata
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
                   onPressed: () {
@@ -107,7 +107,6 @@ class _NilaiInputState extends State<NilaiInput> {
                       double total = matematika + inggris + java;
                       double rataRata = total / 3;
 
-                      // Navigasi ke jendela output
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -171,15 +170,14 @@ class NilaiOutput extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('No. BP: $noBP'),
-            Text('Nama: $nama'),
-            Text('Nilai Matematika: $matematika'),
-            Text('Nilai Bahasa Inggris: $inggris'),
-            Text('Nilai Java: $java'),
-            Text('Rata-rata Nilai: $rataRata'),
+            Text('No. BP: $noBP', style: TextStyle(fontSize: 18)),
+            Text('Nama: $nama', style: TextStyle(fontSize: 18)),
+            Text('Nilai Matematika: $matematika', style: TextStyle(fontSize: 18)),
+            Text('Nilai Bahasa Inggris: $inggris', style: TextStyle(fontSize: 18)),
+            Text('Nilai Java: $java', style: TextStyle(fontSize: 18)),
+            Text('Rata-rata Nilai: $rataRata', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ElevatedButton(
               onPressed: () {
-                // Kembali ke jendela input
                 Navigator.pop(context);
               },
               child: Text('Kembali'),
