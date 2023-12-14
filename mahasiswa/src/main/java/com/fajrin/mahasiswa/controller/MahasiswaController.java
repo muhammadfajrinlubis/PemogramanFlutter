@@ -24,7 +24,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("api/v1/mahasiswa")
-
 public class MahasiswaController {
     
     @Autowired
@@ -35,18 +34,25 @@ public class MahasiswaController {
         return mahasiswaService.getAll();
     }
     
+    @GetMapping(path = "{id}")
+    public Mahasiswa getMahasiswa(@PathVariable("id") Long id){
+        return mahasiswaService.getMahasiswa(id); 
+    }
+    
     @PostMapping
     public void insert(@RequestBody Mahasiswa mahasiswa){
-        mahasiswaService.insert(mahasiswa);
+        mahasiswaService.insert(mahasiswa); 
     }
-    @DeleteMapping(path = "(mahasiswaId)")
-    public void delete(@PathVariable("mahasiswaId") long id){
-        mahasiswaService.delete(id);
+    
+    @DeleteMapping(path = "{mahasiswaId}")
+    public void delete(@PathVariable("mahasiswaId") Long id) {
+        mahasiswaService.delete(id); 
     }
+    
     @PutMapping(path = "{mahasiswaId}")
     public void update(@PathVariable("mahasiswaId") Long MahasiswaId,
-            @RequestParam(required = false)String nama,
-             @RequestParam(required = false)String email){
-        mahasiswaService.update(MahasiswaId, nama, email);
+            @RequestParam(required = false) String nama,
+            @RequestParam(required = false) String email){
+        mahasiswaService.update(MahasiswaId, nama, email); 
     }
 }

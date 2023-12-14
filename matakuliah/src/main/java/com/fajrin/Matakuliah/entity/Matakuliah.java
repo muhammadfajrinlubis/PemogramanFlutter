@@ -2,14 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.fajrin.mahasiswa.entity;
+package com.fajrin.Matakuliah.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import java.time.LocalDate;
 
 /**
  *
@@ -23,12 +22,12 @@ public class Matakuliah {
     private Long id;
     private String kode;
     private String nama;
-    private String sks;
+    private int sks;
 
     public Matakuliah() {
     }
 
-    public Matakuliah(Long id, String kode, String nama, String sks) {
+    public Matakuliah(Long id, String kode, String nama, int sks) {
         this.id = id;
         this.kode = kode;
         this.nama = nama;
@@ -59,11 +58,11 @@ public class Matakuliah {
         this.nama = nama;
     }
 
-    public String getSks() {
+    public int getSks() {
         return sks;
     }
 
-    public void setSks(String sks) {
+    public void setSks(int sks) {
         this.sks = sks;
     }
 

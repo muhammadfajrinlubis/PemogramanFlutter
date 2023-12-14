@@ -21,11 +21,11 @@ import java.time.LocalDate;
 @Table
 public class Mahasiswa {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nama;
     private String email;
-    private LocalDate tgllahir;
+    private LocalDate tgllahir; 
 
     public Mahasiswa() {
     }
@@ -72,7 +72,5 @@ public class Mahasiswa {
     @Override
     public String toString() {
         return "Mahasiswa{" + "id=" + id + ", nama=" + nama + ", email=" + email + ", tgllahir=" + tgllahir + '}';
-    }
-    
-    
+    } 
 }

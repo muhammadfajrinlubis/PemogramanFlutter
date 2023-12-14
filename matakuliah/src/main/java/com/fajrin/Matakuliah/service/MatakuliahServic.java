@@ -4,12 +4,12 @@
  */
 package com.fajrin.Matakuliah.service;
 
-import com.fajrin.mahasiswa.entity.Matakuliah;
+import com.fajrin.Matakuliah.entity.Matakuliah;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.fajrin.Matakuliah.repository.MatakuliahRepository;
-import java.util.Optional;
+
 
 /**
  *
@@ -17,24 +17,14 @@ import java.util.Optional;
  */
 @Service
 public class MatakuliahServic {
-    private final MatakuliahRepository matakuliahRepository;
-    
     @Autowired
-    public MatakuliahServic(MatakuliahRepository MatakuliahRepository){
-        this.matakuliahRepository = MatakuliahRepository;
-    }
+    private MatakuliahRepository matakuliahRepository;
     
-    public List<Matakuliah>getAll(){
+    public List<Matakuliah> getAll(){
         return matakuliahRepository.findAll();
     }
     
-    public void insert(Matakuliah matakuliah){
-        Optional<Matakuliah>MatakuliahOptional =
-                matakuliahRepository.findMatakuliahBySks(matakuliah.getSks());
-         if(MatakuliahOptional.isPresent()){
-               throw new IllegalStateException("sks sudah ada");
-           }
-          matakuliahRepository.save(matakuliah);
-       }
-    
+    public Matakuliah getMatakuliah(Long idmatakuliah){
+        return matakuliahRepository.findById(idmatakuliah).get();
+    } 
 }
