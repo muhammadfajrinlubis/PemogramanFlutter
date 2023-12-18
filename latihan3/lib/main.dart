@@ -23,7 +23,7 @@ class _SalaryCalculatorState extends State<SalaryCalculator> {
   double gajiPokok = 0.0;
   double tunjanganAnak = 0.0;
   double tunjanganIstri = 0.0;
-  double gajiBersih = 0.0; // Add a variable for net salary
+  double gajiBersih = 0.0; 
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime picked = (await showDatePicker(
