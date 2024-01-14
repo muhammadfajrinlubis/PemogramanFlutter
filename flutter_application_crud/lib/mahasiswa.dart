@@ -4,10 +4,14 @@ class Mahasiswa {
   String email;
   String tgllahir;
 
-  Mahasiswa({required this.id, required this.nama, required this.email,required this.tgllahir});
+  Mahasiswa(
+      {required this.id,
+      required this.nama,
+      required this.email,
+      required this.tgllahir});
 
   factory Mahasiswa.fromJson(Map<String, dynamic> json) {
-    return Mahasiswa (
+    return Mahasiswa(
       id: json['id'],
       nama: json['nama'],
       email: json['email'],
